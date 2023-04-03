@@ -4,6 +4,7 @@
 cd /d %~dp0
 :: ????
 git init 
+git pull
 git add . 
  git commit -m "bat???????:%date:~0,10%,%time:~0,8%" 
 ::  git commit -m "%commitMessage%" 
