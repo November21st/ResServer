@@ -1,17 +1,22 @@
-@echo off
+title 12SDK一键部署Git资源
 
-:: 获取当前脚本的路径
-cd /d %~dp0
-:: 自动提交
-git init 
-@echo 同步远端资源
+echo 当前目录是：%cd%
+
+echo 开始同步资源到本地仓库
 git pull
-@echo 更新远端资源
-git add . 
- git commit -m "bat批处理自动推送:%date:~0,10%,%time:~0,8%" 
-::  git commit -m "%commitMessage%" 
+
+echo 开始添加变更
+git add -A .
+echo 执行结束！
+
+echo;
+echo 提交变更到本地仓库
+set /p declation=输入修改:
+git commit -m "%declation%"
+
+echo;
+echo 将变更情况提交到远程git服务器
 git push origin master
-@echo 已经完成,
 
 echo;
 echo 批处理执行完毕！
