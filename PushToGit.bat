@@ -3,7 +3,7 @@ title 12SDK一键部署Git资源
 echo 当前目录是：%cd%
 
 echo 开始同步资源到本地仓库
-git pull
+git pull --rebase origin master
 
 echo 开始添加变更
 git add -A .
@@ -16,7 +16,7 @@ git commit -m "%declation%"
 
 echo;
 echo 将变更情况提交到远程git服务器
-git push origin master
+git push -u origin master
 
 echo;
 echo 批处理执行完毕！
